@@ -138,10 +138,6 @@
 		<?php switch($s_userGroupCode){ case 'admin' : ?>			
 			<li><a href=""><i class="fa fa-bars"></i> <span>Forecast&Actual Sales Order </span></a></li>			
 		<?php break; default : } ?>
-		<?php switch($s_userGroupCode){ case 'admin' : case 'sales' : case 'salesAdmin' : ?>			
-			<li><a href="report_sale.php"><i class="fa fa-bars"></i> <span>Sales Order </span></a></li>			
-			<li><a href="report_sale_pending_by_prod.php"><i class="fa fa-bars"></i> <span>Sales Order Pending by Product </span></a></li>		
-		<?php break; default : } ?>
 		
 		<?php //switch($s_userGroupCode){ case 'admin' : case 'salesAdmin' : case 'salesManager' : ?>	
 		<?php switch($s_userGroupCode){ case 'admin' : ?>	
