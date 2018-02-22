@@ -140,10 +140,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 				if($dateTo<>""){ $sql .= " AND hdr.saleDate<='$dateToYmd' ";	}				
 				$sql .= "
 				group by hdr.soNo, dtl.prodId ";
-				$sql.="
-				ORDER BY soNo desc
-				LIMIT $start, $rows 
-				";
+				$sql.="ORDER BY soNo desc ";
+				$sql.="LIMIT $start, $rows ";
                 $result = mysqli_query($link, $sql);                
            ?>             
 			
@@ -154,8 +152,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 					<th>No.</th>
 					<th>Product Code</th>
 					<th>SO No.</th>
-					<th>Order Qty</th>
-					<th>Sent Qty</th>
+					<th style="text-align: right;">Order Qty</th>
+					<th style="text-align: right;">Sent Qty</th>
 				</tr>
 				</thead>
 				<tbody>
@@ -165,8 +163,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 						<td><?=$c_row;?></td>
 						<td><?=$row['prodCode'];?></td>
 						<td><a href="sale_view.php?soNo=<?=$row['soNo'];?>"><?=$row['soNo'];?></a></td>
-						<td><?=$row['sumQty'];?></td>
-						<td><?=$row['sumSentDtl'];?></td>
+						<td style="text-align: right;"><?=number_format($row['sumQty'],0,'.',',');?></td>
+						<td style="text-align: right;"><?=number_format($row['sumSentDtl'],0,'.',',');?></td>
 					</tr>
                 <?php $c_row +=1; } ?>
 				</tbody>
@@ -177,10 +175,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<div class="col-md-12">
 			<?php $pagingString = "?dateFrom=".$dateFrom."&dateTo=".$dateTo;
 			?>
-			<a href="<?=$rootPage."_dtl_xls.php".$pagingString;?>" class="btn btn-default pull-right" aria-label=".CSV"><span aria-hidden="true">
-				<i class="glyphicon glyphicon-save-file"></i> Excel (by item)</span></a>
-				
-			<a href="<?=$rootPage."_hdr_xls.php".$pagingString;?>" class="btn btn-default pull-right" aria-label=".CSV"><span aria-hidden="true">
+			<a href="<?=$rootPage."_xls.php".$pagingString;?>" class="btn btn-default pull-right" aria-label=".CSV"><span aria-hidden="true">
 				<i class="glyphicon glyphicon-save-file"></i> Excel</span></a>
 				
 			

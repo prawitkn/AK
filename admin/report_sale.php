@@ -193,9 +193,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 		<div class="col-md-12">
 			<?php $pagingString = "?dateFrom=".$dateFrom."&dateTo=".$dateTo."&isClose=".$isClose;
 			?>
-			<a href="<?=$rootPage."_dtl_xls.php".$pagingString;?>" class="btn btn-default pull-right" aria-label=".CSV"><span aria-hidden="true">
-				<i class="glyphicon glyphicon-save-file"></i> Excel (by item)</span></a>
-				
 			<a href="<?=$rootPage."_hdr_xls.php".$pagingString;?>" class="btn btn-default pull-right" aria-label=".CSV"><span aria-hidden="true">
 				<i class="glyphicon glyphicon-save-file"></i> Excel</span></a>
 				
