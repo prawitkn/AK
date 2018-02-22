@@ -373,7 +373,7 @@ $(document).ready(function() {
 			dateParts = queryDate.match(/(\d+)/g)
 			realDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]); 
 			$('#dateFrom').datepicker('setDate', realDate);
-		<?php } ?>		
+		<?php }else{ ?> $('#dateFrom').datepicker('setDate', '0'); <?php } ?>
 		//จบ กำหนดเป็น วันที่จากฐานข้อมูล
 		
 		//กำหนดเป็น วันที่จากฐานข้อมูล		
@@ -382,7 +382,7 @@ $(document).ready(function() {
 			dateParts = queryDate.match(/(\d+)/g)
 			realDate = new Date(dateParts[0], dateParts[1] - 1, dateParts[2]); 
 			$('#dateTo').datepicker('setDate', realDate);
-		<?php } ?>		
+		<?php }else{ ?> $('#dateTo').datepicker('setDate', '0'); <?php } ?>
 		//จบ กำหนดเป็น วันที่จากฐานข้อมูล
 		
 		
